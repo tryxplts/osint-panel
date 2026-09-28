@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osint-panel"
+version = "0.1.0"
+description = "Terminal OSINT dashboard with Maigret and target inspection"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["osint", "maigret", "reconnaissance", "dns", "rdap", "cli", "terminal"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+dependencies = [
+    "rich>=13.0",
+    "maigret>=0.5.0",
+    "dnspython>=2.6",
+]
+
+[project.scripts]
+osint-panel = "osint_panel.app:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
